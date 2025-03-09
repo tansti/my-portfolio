@@ -1,2 +1,2 @@
 # my-portfolio
-My Portfolio (test only)
+My Portfolio (test)
