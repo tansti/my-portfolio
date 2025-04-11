@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="My personal portfolio showcasing my skills and achievements.">
+    <title>Juancho - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+   </head>
+<body>    
+
+    <div id="welcome-page">
+        <div class="welcome-content">
+            <h1>Kamusta?</h1>
+            <p>Ako si Juancho😁</p>
+            <button id="enter-site">Tara explore mo!</button>
+        </div>
+    </div>
+
+    <div id="main-content" style="display: none;">
+
+
+    <header>   
+ <!-- Navigation Bar -->
+    <nav class="navbar">
+        <ul>            
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Likes</a></li>
+            <li><a href="#achievements">Achievements</a></li>
+            <li><a href="#contact">Contact</a></li>
+            
+        </ul>
+    </nav>
+
+        <img id="profilePic" src="./profile1.jpg" alt="Your Name">
+        <h1>Juancho</h1>
+        <p>Explorer | Adventurer</p>
+        <button id="darkModeToggle">🌙</button>
+
+    </header>
+<!-- Profile Picture Modal -->
+<div id="imageModal" class="modal">
+    <img class="modal-content" id="fullSizeImage">
+</div>
+<section id="about">
+    <div class="container">
+        <h2>About Me</h2>
+        <p>Hey, I’m Juancho—your friendly neighborhood wild spirit with a heart full of adventure! I’m always chasing the next trail, summit, or view that’ll probably make me question my life choices. Whether I’m clumsily stumbling through lush forests, pretending I know what I’m doing while hiking up mountains (spoiler: I don’t), or diving into the unknown like it’s a reality show challenge—nature is basically my playground. I thrive on the thrill of thinking I’m totally prepared… only to realize I forgot my water bottle halfway up a mountain. If there’s a hidden path or a “shortcut” that looks a little too sketchy, I’m there. Life’s too short to stay still—especially when staying still involves chores. So let’s get lost, find some breathtaking views, and maybe, just maybe, I’ll find the trail I was supposed to be on in the first place!
+            <span class="animated-icons">
+            <span class="leaf">🌿</span>
+             <span class="earth">🌍</span>
+            <span class="rocket">🚀</span>
+            </span>
+        </p>
+    </div>
+</section>
+
+<section id="skills">
+    <div class="container">
+        <h2>Likes</h2>
+        <div class="skills">
+            <div class="skill">
+                <div class="travelrist-section">
+                <h3>Travelrist</h3>
+                <p>Leave the map behind and follow your heart. The greatest adventures are found off the beaten path.</p>
+                </div>
+            </div>
+            <div class="skill Hikerist-section">
+                <h3>Hikerist</h3>
+                <p>Step by step, trail by trail – mastering the art of hiking, one adventure at a time! </p>
+            </div>
+            <div class="skill Bikerist-section">
+                <h3>Bikerist</h3>
+                <p>Pedal power, wind in my hair, and trails to conquer! Let’s ride like we’re chasing sunsets!</p>
+                
+            </div>
+            <div class="skill Risktaker-section">
+                <h3>Risktaker</h3>
+                <p>Great things never come from comfort zones. Dare to risk it all and discover what’s waiting on the other side.</p>
+            </div>
+        </div>
+
+</div>
+</section>
+
+<section id="achievements">
+    <div class="container">
+        <h2>Achievements</h2>
+        <div class="achievements">
+            <div class="achievements">
+                <h3>Calatagan</h3>
+                <p>Sandy toes, sun-kissed nose, and endless laughs with the best crew! 🌅🌊 #BeachVibes</p>
+                <a href="#" id="viewLink">View</a>
+            </div>
+            <div id="collageModal" class="modal">
+                <span class="close" id="closeModalCalatagan">&times;</span>
+                <div class="modal-content collage">
+                    <img src="image1.jpg" alt="Calatagan 1">
+                    <img src="image2.jpg" alt="Calatagan 2">
+                    <img src="image3.jpg" alt="Calatagan 3">
+                    <img src="image4.jpg" alt="Calatagan 4">
+                    <img src="image5.jpg" alt="Calatagan 5">
+                    <img src="image6.jpg" alt="Calatagan 6">
+                </div>
+            </div>
+                <div class="achievements">
+                <h3>Aw-asen Falls</h3>
+                <p>From the peak to the plunge—hiked a mountain, now chasing waterfalls! 🌿🏔️💦 #AdventureAwaits</p>
+                <a href="./Awasen Falls - Tour.mp4" target="_blank">View</a>
+                </div>
+            
+            <div class="achievements">
+         <h3>Dingalan Aurora</h3>
+                <p>A peak where the Pacific Ocean meets endless possibilities. 🏞️🌊 #NatureInspiration  </p>
+                <a >View</a>
+            </div>                      
+                   </section>
+<section id="contact">
+    <div class="container">
+        <h2>Contact</h2>
+        <p>If you'd like to get in touch with me, feel free to send me an email or follow me on social media!</p>
+        <p>Email: <a href="mailto:youremail@example.com">juancho@gmail.com</a></p>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 MyPortfolio. All rights reserved.</p>
+</footer>
+
+ <!-- Floating Comment Section -->
+ <div id="comment-section" class="hidden">
+    <h3>Comments</h3>
+    <ul id="comment-list"></ul>
+    <textarea id="comment-input" placeholder="Write a comment..."></textarea>
+    <button onclick="saveComment()">Submit</button>
+</div>
+<button id="comment-toggle" onclick="toggleCommentSection()">💬</button>
+
+
+<script src="script.js"></script>
+</body>
+</html>

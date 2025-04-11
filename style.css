@@ -1,0 +1,603 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-image: url('./1741692581673.jpg'); /* Replace with the correct path */
+    background-size: cover;  /* Ensures the image covers the entire header */
+    background-position:bottom; /* Centers the image in the header */
+    color: white;
+    text-align: center;
+    padding: 6rem 0;
+}
+header img {
+    border-radius:50%;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 1rem;
+    object-fit: cover;
+}
+
+header h1 {
+    margin: 0;
+}
+section {
+    padding: .5rem;
+    margin: .1rem 0;
+}
+.container {
+    max-width: 1200px;
+    width: 85%;
+    margin: 0 auto;
+}
+
+/* Common styles for all skill sections */
+.skills {
+    display: flex; /* Ensure skills are aligned horizontally if necessary */
+    gap: 20px; /* Optional: Add spacing between skill items */
+}
+
+/* Common styles for individual skill items */
+.skill {
+    transition: transform 0.1s ease-in-out, box-shadow 0.3s ease-in-out, border 0.3s ease-in-out;
+    border: 5px solid transparent; /* Start with transparent border */
+    padding: 20px; /* Optional: Add padding for spacing */
+}
+
+/* Hover effect applied individually for each skill */
+.skill:hover {
+    transform: scale(1.06); /* Zoom in slightly */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Add a soft shadow for depth */
+}
+
+.achievements {
+    display:inline-flex;
+    flex-wrap:wrap;
+    gap: .5rem;    
+    
+}
+.achievements{
+    background-color: #ffffff;
+    padding:.4rem;
+    border-radius: 20px;
+    box-shadow: 0 2px 6px rgba(211, 29, 29, 0.15);
+    flex: 1;
+    min-width: 250px; 
+    overflow: hidden; /* Ensures no content goes outside the box */
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    
+    
+}
+.skill {
+    background-color: #ffffff;
+    padding: .4rem;
+    border-radius: 20px;
+    box-shadow: 0 2px 6px rgba(211, 29, 29, 0.15);
+    flex: 1;
+    min-width: 250px;
+    
+}
+footer {
+    background-color:rgba(255, 255, 255, 0.1); /* Deep forest green */
+    color: black;
+    text-align: center;
+    padding: .1rem 0;
+}
+
+/* Modal Background */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.show {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Enlarged Image */
+.modal-content {
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3);
+    transition: transform 0.3s ease-in-out;
+}
+
+.animated-icons {
+    display: inline-block;
+    position: relative;
+}
+
+/* 🌍 should rotate */
+.animated-icons .earth {
+    display: inline-block;
+    animation: rotateIcons 1s linear infinite;
+}
+
+@keyframes rotateIcons {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* 🌿 Single Leaf Shaking Effect */
+.animated-icons .leaf {
+    display: inline-block;
+    animation: shakingLeaf 0.5s infinite ease-in-out alternate;
+}
+
+@keyframes shakingLeaf {
+    0% { transform: rotate(0deg) translateX(0px); }
+    25% { transform: rotate(-5deg) translateX(-2px); }
+    50% { transform: rotate(5deg) translateX(2px); }
+    75% { transform: rotate(-5deg) translateX(-2px); }
+    100% { transform: rotate(5deg) translateX(2px); }
+}
+
+/* 🚀 moves diagonally (slant effect) */
+.animated-icons .rocket {
+    display: inline-block;
+    animation: rocketMove 1s infinite alternate ease-in-out;
+}
+
+@keyframes rocketMove {
+    0% { transform: translate(0, 0) rotate(-15deg); }
+    100% { transform: translate(10px, -10px) rotate(-15deg); }
+}
+
+/* Add this to your CSS */
+@keyframes typewriter {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+h3 {
+    overflow: hidden; /* Hide the text that overflows */
+    white-space: nowrap; /* Prevent the text from wrapping */
+    border-right: 0.1em solid transparent; /* Create the cursor effect */
+    animation: typewriter 1s steps(30) 1s forwards, blink 0.75s step-end infinite;
+}
+
+/* Cursor blink effect */
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+    
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+
+
+#profilePic {
+    transition: transform 0.3s ease-in-out;
+    animation: bounce 0.8s infinite ease-in-out; /* Apply bouncing loop */
+}
+
+
+#darkModeToggle {
+    font-size: 1.2rem; /* Adjust the size */
+    position: fixed;
+    top: 2.5rem;
+    right: 0rem;
+    padding: 1rem 1rem;
+    background: transparent;
+    border: none;
+    border-radius: 35px;
+    cursor: pointer;
+    z-index: 20; /* Ensure it stays above the navbar */
+    transition: background 0.3s ease-in-out;
+}
+
+#darkModeToggle:hover {
+    background: rgba(255, 255, 255, 0.1);
+
+}
+
+.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.dark-mode header {
+    background-color: #1e1e1e;
+}
+
+.dark-mode .skill, 
+.dark-mode .achievements {
+    background-color: #222;
+    color: #fff;
+    box-shadow: 0 2px 6px rgba(255, 255, 255, 0.15);
+}
+
+.dark-mode footer {
+    background-color: transparent;
+}
+
+
+/* Collage Modal */
+.modal {
+    display: none; /* Hide by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal Content - Collage Grid */
+.modal-content {
+    background: transparent;
+    padding: 20px;
+    border-radius: 15;
+    max-width: 60%;
+    max-height: 60%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 10px; /* Space between images */
+    overflow-y: auto; /* Allows scrolling if needed */
+}
+
+/* Images inside the collage */
+.collage img {
+    width: 100%; /* Ensures images fit inside the grid */
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Close button styling */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+}
+
+/* Responsive Fix - Adjust to 2 columns on small screens */
+@media (max-width: 768px) {
+    .modal-content {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+    }
+}
+
+/* Responsive Fix - Single column on very small screens */
+@media (max-width: 480px) {
+    .modal-content {
+        grid-template-columns: repeat(1, 1fr); /* 1 column for small screens */
+    }
+}
+
+
+/* Styling for the View link */
+#viewLink {
+    color: #2196F3; /* Set the default color (blue in this case) */
+    text-decoration: none; /* Removes underline */
+    transition: color 0.3s ease-in-out; /* Smooth color transition on hover */
+}
+
+#viewLink:hover {
+    color: #FF5722; /* Change the color on hover (orange in this case) */
+    text-decoration: underline; /* Optional: adds underline on hover */
+}
+
+/* Styling for all links (including Watch) */
+a {
+    color: #2196F3; /* Set the default color (blue in this case) */
+    text-decoration: none; /* Removes underline */
+    transition: color 0.3s ease-in-out; /* Smooth color transition on hover */
+}
+
+a:hover {
+    color: #FF5722; /* Change the color on hover (orange in this case) */
+    text-decoration: underline; /* Optional: adds underline on hover */
+}
+
+/* Initial style for sections */
+section {
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+/* Blur effect for non-active sections */
+.blur-background {
+    filter: blur(5px); /* Apply blur effect */
+}
+
+/* Active section (focused) styling */
+.active {
+    transform: scale(1.05); /* Optional: Adds a scaling effect to the active section */
+}
+
+/* Ensure smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Styling for the navbar */
+.navbar {
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width:100%;
+    background: rgba(255, 255, 255, 0.1); /* Light transparent background */
+    backdrop-filter: blur(10px); /* Apply blur for the glass effect */
+    color: white;
+    padding: 10px 20px;
+    z-index: 100; /* Make sure navbar stays on top */
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    margin: 0 auto; /* Center the navbar horizontally on larger screens */
+    box-sizing: border-box; /* Ensure padding does not affect width */
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #2196F3;
+    font-size: .8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    color: #FF5722; /* Highlight color */
+}
+
+/* Apply the blur effect to all sections except the one in focus */
+.blur-background {
+    filter: blur(5px);
+    transition: filter 0.3s ease;
+}
+
+/* Ensure the focused section stays prominent */
+section.active {
+    transform: scale(1.05); /* Slightly enlarge the section */
+    z-index: 10; /* Bring the section in front of others */
+}
+
+/* Smooth transition for sections */
+section {
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Hide sections when they are not in focus */
+section.hidden {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.container h2 {
+    position: relative;
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: bold;
+    z-index: 1;
+    padding: 10px 20px;
+}
+
+.container h2::before {
+    content: "";
+    position: absolute;
+    left: -10px;
+    right: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 1.2em;
+    background: linear-gradient(90deg, #744b4b, #FFA726, #FFD54F);
+    opacity: 0.5;
+    z-index: -1;
+    filter: blur(10px); /* Makes it rough */
+    border-radius: 20px;
+    mix-blend-mode: multiply;
+}
+
+/* Floating Comment Section */
+#comment-section {
+    position: fixed;
+    bottom: 80px; /* Above the button */
+    right: 20px;
+    width: 300px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    display: none; /* Initially hidden */
+    z-index: 1000;
+}
+
+#comment-section h3 {
+    margin-top: 0;
+    font-size: 16px;
+    text-align: center;
+}
+
+#comment-list {
+    max-height: 150px;
+    overflow-y: auto;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #f9f9f9;
+}
+
+#comment-input {
+    width: 94%;
+    padding: 8px;
+    margin-top: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#comment-section button {
+    width: 100%;
+    margin-top: 8px;
+    padding: 8px;
+    border: none;
+    background: #007bff;
+    color: white;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#comment-section button:hover {
+    background: #FF5722;
+}
+
+/* Floating Comment Toggle Button */
+#comment-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: #007bff;
+    color: white;
+    border-radius: 50%;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+    z-index: 1001;
+}
+
+#comment-toggle:hover {
+    background: #FF5722;
+}
+
+
+
+@keyframes flipTiles {
+    0% {
+        transform: rotateY(0deg);
+    }
+    50% {
+        transform: rotateY(180deg);
+    }
+    100% {
+        transform: rotateY(0deg);
+    }
+}
+
+#welcome-page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent; /* Semi-transparent black background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease, visibility 0s 0.5s;
+}
+
+.welcome-content {
+    background-color: white;
+    color: black;
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.welcome-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.welcome-content p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+}
+
+#enter-site {
+    padding: 12px 25px;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#enter-site:hover {
+    background-color: #FF5722;
+}
+
+#main-content {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+
+
+
